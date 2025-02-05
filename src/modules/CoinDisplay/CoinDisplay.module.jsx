@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const CoinDisplay = ({ currency, coins }) => {
  
@@ -12,7 +13,8 @@ const CoinDisplay = ({ currency, coins }) => {
         <p className="hidden md:block text-right">Market Cap</p>
       </div>
       {coins.slice(0, 10).map((coin, index) => (
-        <div
+        <Link
+        to={`/coin/${coin.id}`}
           key={coin.id}
           className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-tableLayoutCol py-4 px-5 border-b-2 border-[#3c3c3c] items-center"
         >
@@ -36,7 +38,7 @@ const CoinDisplay = ({ currency, coins }) => {
             {currency.symbol}
             {coin.market_cap.toLocaleString()}{" "}
           </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

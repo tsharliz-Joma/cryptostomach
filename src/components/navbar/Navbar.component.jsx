@@ -1,8 +1,9 @@
 import { useState } from "react";
-import logo from "../../assets/logo.png";
 import { useCoinContext } from "../../hooks/useCoinContext.js";
 import { MdArrowOutward } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { FaBitcoin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { setCurrency } = useCoinContext();
@@ -33,22 +34,24 @@ const Navbar = () => {
 
   return (
     <div className="navbar z-10 flex flex-wrap justify-between items-center py-4 px-5 border-b-2 border-[#3c3c3c] text-[#ddd]">
-      <div>
-        <img className="w-40" src={logo} alt="Logo" />
+      <div className="flex gap-5">
+        <FaBitcoin className="text-[#f7931a] text-5xl" />
+        <h2 className="text-3xl text-bold ">Crypto Clause</h2>
+        {/* <img className="w-40" src={logo} alt="Logo" /> */}
       </div>
       <div>
         <ul className={`mobile:hidden md:flex gap-10 list-none w-full md:w-auto`}>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">Features</a>
+            <Link to="/Features">Features</Link>
           </li>
           <li>
-            <a href="#">Pricing</a>
+            <Link to="/Pricing">Pricing</Link>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <Link to="/Blog">Blog</Link>
           </li>
         </ul>
         <div className="dropdown mobile:w-52 flex justify-end dropdown-bottom md:hidden">
@@ -67,16 +70,16 @@ const Navbar = () => {
             } md:flex  w-full md:w-auto`}
           >
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Features</a>
+              <Link to="/Features">Features</Link>
             </li>
             <li>
-              <a href="#">Pricing</a>
+              <Link to="/Pricing">Pricing</Link>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <Link to="/Blog">Blog</Link>
             </li>
           </ul>
         </div>

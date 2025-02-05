@@ -6,13 +6,15 @@ import Footer from "./modules/Footer/Footer";
 
 const App = () => {
   return (
-    <div className="App grid gap-[30px]">
+    <div className="App min-h-screen flex flex-col">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/coin/:coinId" element={<Coin />} />
-      </Routes>
-      <Footer />
+      <div className="flex-grow ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/coin/:coinId" element={<Coin />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 };
