@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { lazy, Suspense } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -52,7 +53,9 @@ const PriceGraph = ({ historicalData, coinName }) => {
 
   return (
     <div className="h-60">
-      <Line data={chartData} options={chartOptions} />
+      <Suspense fallback={<div className="h-full w-full bg-black"></div>}>
+        <Line data={chartData} options={chartOptions} />
+      </Suspense>
     </div>
   );
 };
