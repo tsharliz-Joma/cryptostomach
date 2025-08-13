@@ -45,13 +45,13 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Features">Features</Link>
+            <Link to="/features">Features</Link>
           </li>
           <li>
-            <Link to="/Pricing">Pricing</Link>
+            <Link to="/pricing">Pricing</Link>
           </li>
           <li>
-            <Link to="/Blog">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
         <div className="dropdown mobile:w-52 flex justify-end dropdown-bottom md:hidden">
